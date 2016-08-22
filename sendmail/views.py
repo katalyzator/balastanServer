@@ -7,9 +7,11 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+
 from balastanServer.settings import BASE_DIR
 
-
+@csrf_exempt
 def sendMail(request):
     try:
 
