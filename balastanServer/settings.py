@@ -28,8 +28,8 @@ ALLOWED_HOSTS = []
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'email'
-EMAIL_HOST_PASSWORD = 'password_here'
+EMAIL_HOST_USER = 'balastan.app@gmail.com'
+EMAIL_HOST_PASSWORD = 'balastan123'
 EMAIL_PORT = 587
 
 # Application definition
