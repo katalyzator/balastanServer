@@ -24,7 +24,7 @@ def sendMail(request):
         context = Context(dict(name=name, number=number))
         template = Template(content)
 
-        email = EmailMessage('Balastan', template.render(context), to=['avaz.abdrasulov@gmail.com'])
+        email = EmailMessage('Balastan', template.render(context), to=['abonentter@gmail.com'])
         email.content_subtype='html'
         email.send()
         return JsonResponse(dict(result='okay'))
