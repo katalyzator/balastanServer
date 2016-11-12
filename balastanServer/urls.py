@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'send/$', 'sendmail.views.sendMail', name='sendmail')
+    url(r'^send/$', 'sendmail.views.sendMail', name='sendmail')
+   
 ]

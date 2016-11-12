@@ -5,11 +5,11 @@ from django.template import Context, Template
 from django.http import JsonResponse
 from django.shortcuts import render
 
-
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
 from balastanServer.settings import BASE_DIR
+
 
 @csrf_exempt
 def sendMail(request):
@@ -24,8 +24,9 @@ def sendMail(request):
         context = Context(dict(name=name, number=number))
         template = Template(content)
 
-        email = EmailMessage('Balastan', template.render(context), to=['abonentter@gmail.com'])
-        email.content_subtype='html'
+        email = EmailMessage('Balastan', template.render(context), to=['abontentter@gmail.com'])
+        email.content_subtype = 'html'
+
         email.send()
         return JsonResponse(dict(result='okay'))
 
