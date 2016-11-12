@@ -24,6 +24,11 @@ def sendMail(request):
         context = Context(dict(name=name, number=number))
         template = Template(content)
 
+<<<<<<< HEAD
+        email = EmailMessage('Balastan', template.render(context), to=['abontentter@gmail.com'])
+        email.content_subtype = 'html'
+
+=======
         email = EmailMessage('Balastan', template.render(context), to=['avaz.abdrasulov@gmail.com'])
         email.content_subtype = 'html'
 
@@ -53,6 +58,7 @@ def sendEmail(request):
         email = EmailMessage('EasyDo', template.render(context), to=['odaniaro@gmail.com'])
         email.content_subtype = 'html'
 
+>>>>>>> 94c06e85e606e64bf2992fc5b2fffeeeefdaceb6
         email.send()
         return JsonResponse(dict(result='okay'))
 
