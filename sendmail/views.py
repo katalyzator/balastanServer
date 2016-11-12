@@ -24,9 +24,41 @@ def sendMail(request):
         context = Context(dict(name=name, number=number))
         template = Template(content)
 
+<<<<<<< HEAD
         email = EmailMessage('Balastan', template.render(context), to=['abontentter@gmail.com'])
         email.content_subtype = 'html'
 
+=======
+        email = EmailMessage('Balastan', template.render(context), to=['avaz.abdrasulov@gmail.com'])
+        email.content_subtype = 'html'
+
+        email = EmailMessage('Balastan', template.render(context), to=['abonentter@gmail.com'])
+        email.content_subtype = 'html'
+
+        email.send()
+        return JsonResponse(dict(result='okay'))
+
+    except:
+
+        return JsonResponse(dict(result='error'))
+
+
+def sendEmail(request):
+    try:
+
+        mail = request.POST.get('email')
+        message = request.POST.get('message')
+        f = open(os.path.join(BASE_DIR, "templates/email.html"))
+
+        content = f.read()
+        f.close()
+        context = Context(dict(mail=mail, message=message))
+        template = Template(content)
+
+        email = EmailMessage('EasyDo', template.render(context), to=['odaniaro@gmail.com'])
+        email.content_subtype = 'html'
+
+>>>>>>> 94c06e85e606e64bf2992fc5b2fffeeeefdaceb6
         email.send()
         return JsonResponse(dict(result='okay'))
 
