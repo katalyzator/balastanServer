@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^send/$', 'sendmail.views.sendMail', name='sendmail'),
     url(r'^sendmail/$', 'sendmail.views.sendEmail', name='sendEmail'),
-    url(r'^import/$', 'importusers.views.import_user', name='importuser')
+    url(r'^import/$', 'importusers.views.import_user', name='importuser'),
 ]
